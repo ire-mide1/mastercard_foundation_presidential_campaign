@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iremide for Scholars' Rep</title>
+<meta name="description" content="Iremide Oyelaja's 14-day campaign. Your voice, my work, our progress.">
+<meta property="og:title" content="Iremide for Scholars' Representative">
+<meta property="og:description" content="Don't just vote for me. Hold me to it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14213d; --ink-soft:#4a5573; --paper:#fbf8f2; --card:#ffffff;
+    --accent:#e09f1f; --accent-deep:#b97c0c; --teal:#1f7a6d; --line:#e6e0d4;
+    --radius:16px; --shadow:0 10px 30px rgba(20,33,61,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  section{padding:64px 0}
+  .eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep)}
+  .btn{display:inline-block;border:0;cursor:pointer;font:600 1rem Inter,sans-serif;padding:14px 26px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;transition:transform .15s,background .15s}
+  .btn:hover{transform:translateY(-2px);background:#0b1426}
+  .btn.gold{background:var(--accent);color:var(--ink)}
+  .btn.gold:hover{background:var(--accent-deep);color:#fff}
+  .btn.ghost{background:transparent;color:var(--ink-soft);padding:10px 16px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:rgba(251,248,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+  .brand{font-family:Fraunces,serif;font-weight:800;font-size:1.15rem;text-decoration:none}
+  .brand span{color:var(--accent-deep)}
+  .navlinks{display:flex;gap:22px;font-size:.92rem;font-weight:500}
+  .navlinks a{text-decoration:none;color:var(--ink-soft)}
+  .navlinks a:hover{color:var(--ink)}
+  @media(max-width:720px){.navlinks{display:none}}
+  .daychip{font-size:.8rem;font-weight:700;background:var(--ink);color:#fff;padding:6px 12px;border-radius:999px;white-space:nowrap}
+
+  /* hero */
+  .hero{padding:72px 0 56px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(224,159,31,.25),transparent 70%)}
+  .hero h1{font-size:clamp(2.3rem,6vw,4rem);margin:12px 0 14px}
+  .hero h1 em{font-style:normal;color:var(--accent-deep)}
+  .hero .slogan{font-size:1.2rem;color:var(--ink-soft);max-width:560px}
+  .hero .hold{margin:22px 0 28px;font-family:Fraunces,serif;font-size:1.35rem;font-weight:600;border-left:4px solid var(--accent);padding-left:14px}
+  .countdown{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+  .cd{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;min-width:76px;text-align:center;box-shadow:var(--shadow)}
+  .cd b{display:block;font-family:Fraunces,serif;font-size:1.8rem}
+  .cd small{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft)}
+  .cd-label{width:100%;font-size:.85rem;color:var(--ink-soft);font-weight:600}
+
+  /* today */
+  .today{background:var(--ink);color:#fff}
+  .today .eyebrow{color:var(--accent)}
+  .progress{display:flex;gap:6px;margin:18px 0 30px;flex-wrap:wrap}
+  .progress i{width:26px;height:8px;border-radius:4px;background:rgba(255,255,255,.15)}
+  .progress i.done{background:var(--accent)}
+  .progress i.now{background:#fff}
+  .post h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:16px}
+  .post .body{font-size:1.08rem;max-width:720px;color:rgba(255,255,255,.88)}
+  .post .body p{margin-bottom:14px}
+  .post .body ul{margin:0 0 14px 20px}
+  .video{position:relative;padding-top:56.25%;border-radius:var(--radius);overflow:hidden;margin:24px 0;max-width:760px;background:#000}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .notice{background:rgba(224,159,31,.15);border:1px solid rgba(224,159,31,.4);color:#fff;border-radius:12px;padding:10px 14px;font-size:.9rem;margin-bottom:20px;display:inline-block}
+
+  /* promises */
+  .head{margin-bottom:30px}
+  .head h2{font-size:clamp(1.8rem,4vw,2.5rem);margin:8px 0}
+  .head p{color:var(--ink-soft);max-width:620px}
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .card .num{font-family:Fraunces,serif;font-size:2rem;color:var(--accent);font-weight:800}
+  .card h3{font-size:1.2rem;margin:4px 0 8px}
+  .card p{color:var(--ink-soft);font-size:.95rem}
+  .status{display:inline-block;margin-top:14px;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+  .status.not-started{background:#eef0f5;color:var(--ink-soft)}
+  .status.in-progress{background:#fff3d6;color:var(--accent-deep)}
+  .status.done{background:#d9f0ea;color:var(--teal)}
+  .pollbar{margin-top:14px;font-size:.82rem;color:var(--teal);font-weight:600}
+
+  /* trail */
+  .trail{background:#f3eee3}
+  .trailcard{cursor:pointer;transition:transform .15s}
+  .trailcard:hover{transform:translateY(-3px)}
+  .trailcard .day{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-deep)}
+  .trailcard .more{display:none;margin-top:12px;color:var(--ink);font-size:.95rem}
+  .trailcard .more p{margin-bottom:10px}
+  .trailcard.open .more{display:block}
+  .trailcard .toggle{margin-top:12px;font-size:.85rem;font-weight:600;color:var(--teal)}
+  .empty{color:var(--ink-soft);font-style:italic}
+
+  /* voice */
+  .two{display:grid;gap:28px;grid-template-columns:1fr 1fr}
+  @media(max-width:800px){.two{grid-template-columns:1fr}}
+  form label{display:block;font-weight:600;font-size:.9rem;margin:14px 0 6px}
+  textarea,input[type=text]{width:100%;font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff}
+  textarea{min-height:120px;resize:vertical}
+  textarea:focus,input:focus{outline:2px solid var(--accent);border-color:transparent}
+  .check{display:flex;gap:8px;align-items:flex-start;font-weight:400 !important;font-size:.85rem !important;color:var(--ink-soft)}
+  .formmsg{margin-top:12px;font-weight:600;color:var(--teal)}
+  .heard{list-style:none}
+  .heard li{border-left:3px solid var(--teal);padding:4px 0 4px 14px;margin-bottom:18px}
+  .heard b{display:block}
+  .heard span{color:var(--ink-soft);font-size:.95rem}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.8);padding:44px 0;text-align:center}
+  footer p{max-width:560px;margin:0 auto 18px}
+  .wa{background:#25d366;color:#08311c}
+  .wa:hover{background:#1ebe5b;color:#08311c}
+  footer small{display:block;margin-top:22px;font-size:.78rem;opacity:.6}
+
+  /* modal */
+  .overlay{position:fixed;inset:0;background:rgba(20,33,61,.6);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+  .overlay.show{display:flex}
+  .modal{background:var(--paper);border-radius:22px;max-width:440px;width:100%;padding:34px 28px 26px;text-align:center;animation:pop .35s cubic-bezier(.2,1.4,.4,1)}
+  @keyframes pop{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+  .wave{font-size:3rem;display:inline-block;animation:wave 1.4s ease-in-out 2}
+  @keyframes wave{0%,100%{transform:rotate(0)}25%{transform:rotate(18deg)}75%{transform:rotate(-12deg)}}
+  .modal h2{font-size:2.2rem;margin:8px 0 10px}
+  .modal p{color:var(--ink-soft);margin-bottom:22px}
+  .opts{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;text-align:left}
+  .opt{border:2px solid var(--line);background:#fff;border-radius:12px;padding:12px 14px;font:500 .97rem Inter,sans-serif;cursor:pointer;text-align:left;color:var(--ink)}
+  .opt:hover{border-color:var(--accent)}
+  .opt.picked{border-color:var(--ink);background:var(--ink);color:#fff}
+  .step{display:none}.step.show{display:block}
+</style>
+</head>
+<body>
+
+<script>
+/* =====================================================================
+   EDIT EVERYTHING IN THIS BLOCK. You don't need to touch anything else.
+   ===================================================================== */
+
+const CONFIG = {
+  name: "Iremide Oyelaja",
+  shortName: "Iremide",
+  position: "Mastercard Foundation Scholars' Representative",   // exact title
+  slogan: "Your voice. My work. Our progress.",                  // your slogan
+  campaignStart: "2026-10-30",        // Day 1 date (YYYY-MM-DD)
+  totalDays: 14,
+  votingDate: "2026-11-13T09:00:00",  // when voting opens (local time)
+  siteUrl: "",                        // your GitHub Pages link once live, for the share button
+
+  // Optional: paste Google Form details to collect poll votes & feedback (see README)
+  pollForm:  { action: "", entry: "" },
+  voiceForm: { action: "", messageEntry: "", nameEntry: "" }
+};
+
+// Your promises. These also become the poll options.
+// status: "not-started" | "in-progress" | "done"  (update these after you win)
+const PROMISES = [
+  { title: "A voice that reaches the top",
+    how: "Monthly scholar town halls, with a public summary posted here within 48 hours.",
+    status: "not-started" },
+  { title: "Career doors, opened",
+    how: "A termly internship and job board, plus mentorship pairings with alumni and industry.",
+    status: "not-started" },
+  { title: "Welfare that responds",
+    how: "A simple channel to raise welfare issues, with every issue tracked to a response.",
+    status: "not-started" },
+  { title: "Giving back, together",
+    how: "One community project per semester that scholars choose and lead.",
+    status: "not-started" }
+];
+
+// One post per day. The current day shows as "Today"; earlier days move to "The Trail So Far".
+// body accepts simple HTML (<p>, <ul>, <b>). video = YouTube video ID (the part after v=), or "".
+const POSTS = [
+  { day: 1, title: "Why Me",
+    video: "",
+    body: `
+      <p>I've spent the last few years building things that serve people: leading a data community, running free workshops, speaking at tech events, and volunteering with the Lagos Food Bank.</p>
+      <p>I've learnt that leadership isn't the title. It's showing up, listening, and following through when nobody is checking.</p>
+      <p>So I'm doing something different: <b>every promise I make is on this page, with a status tag.</b> If I win, you'll watch them move from "Not started" to "Done". Hold me to it.</p>` },
+  // { day: 2, title: "Your Day 2 title", video: "", body: `<p>Day 2 content...</p>` },
+];
+
+// "You said, I heard": post the common themes from the form with your response.
+const HEARD = [
+  // { theme: "Stipends arrive late", response: "I'll push for a published payment calendar and a clear escalation contact." },
+];
+/* ===================================================================== */
+</script>
+
+<!-- WELCOME + POLL POPUP -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="hey">
+  <div class="modal">
+    <div class="step show" id="step1">
+      <div class="wave">👋</div>
+      <h2 id="hey">Hey, Leader!</h2>
+      <p>Before you look around: this campaign is about <b>you</b>. Tell me what matters most to you. It takes 5 seconds.</p>
+      <button class="btn gold" id="startPoll">Have my say</button><br>
+      <button class="btn ghost" id="skip1">Maybe later</button>
+    </div>
+    <div class="step" id="step2">
+      <span class="eyebrow">Quick poll</span>
+      <h2 style="font-size:1.6rem">What matters most to you?</h2>
+      <p style="margin-bottom:16px">Pick one from my agenda.</p>
+      <div class="opts" id="opts"></div>
+      <button class="btn" id="submitPoll" disabled style="opacity:.5">Submit</button><br>
+      <button class="btn ghost" id="skip2">Skip</button>
+    </div>
+    <div class="step" id="step3">
+      <div class="wave">🙌</div>
+      <h2 style="font-size:1.8rem">Heard, loud and clear.</h2>
+      <p id="thanksText"></p>
+      <button class="btn gold" id="closeModal">See the campaign</button>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="brand" id="brand"></a>
+    <div class="navlinks">
+      <a href="#today">Today</a><a href="#promises">Promises</a><a href="#trail">The Trail</a><a href="#voice">Your Voice</a>
+    </div>
+    <span class="daychip" id="daychip"></span>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow" id="heroPos"></span>
+    <h1 id="heroName"></h1>
+    <p class="slogan" id="heroSlogan"></p>
+    <p class="hold">Don't just vote for me. Hold me to it.</p>
+    <a href="#promises" class="btn">See my promises</a>
+    <div class="countdown" id="countdown"></div>
+  </div>
+</header>
+
+<section class="today" id="today">
+  <div class="wrap">
+    <span class="eyebrow" id="todayLabel"></span>
+    <div class="progress" id="progress"></div>
+    <div class="post" id="todayPost"></div>
+  </div>
+</section>
+
+<section id="promises">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The promise tracker</span>
+      <h2>What I'll do, and proof I did it.</h2>
+      <p>Every promise has a status. They all start at "Not started". If you elect me, this page becomes my public report card, and you can watch each one move.</p>
+    </div>
+    <div class="grid" id="promiseGrid"></div>
+  </div>
+</section>
+
+<section class="trail" id="trail">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The Trail So Far</span>
+      <h2>Catch up on the campaign.</h2>
+      <p>Missed a day? Every past post lives here. Tap a card to read it.</p>
+    </div>
+    <div class="grid" id="trailGrid"></div>
+  </div>
+</section>
+
+<section id="voice">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Your voice</span>
+      <h2>You said. I heard.</h2>
+      <p>What's one thing your representative should fix? I read every message, and I'll post the common themes here with my response.</p>
+    </div>
+    <div class="two">
+      <form class="card" id="voiceForm">
+        <label for="msg">Your message</label>
+        <textarea id="msg" required placeholder="The one thing I'd want fixed is..."></textarea>
+        <label for="nm">Your name (optional)</label>
+        <input type="text" id="nm" placeholder="Leave blank to stay anonymous">
+        <label class="check"><input type="checkbox" id="pub"> You can mention my name if you post this theme.</label>
+        <div style="margin-top:18px"><button class="btn gold" type="submit">Send it</button></div>
+        <div class="formmsg" id="formmsg"></div>
+      </form>
+      <div class="card">
+        <h3 style="margin-bottom:16px">What I've heard so far</h3>
+        <ul class="heard" id="heardList"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:#fff">After the election, this page becomes my public progress report.</b> Bookmark it and keep me honest.</p>
+    <a class="btn wa" id="waShare" target="_blank" rel="noopener">Share on WhatsApp</a>
+    <small id="footNote"></small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ---- safe storage (works even if the browser blocks it) ----
+  const store = {
+    get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+    set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+  };
+  const $ = id => document.getElementById(id);
+
+  // ---- which day is it? (add ?day=5 to the URL to preview a day) ----
+  const start = new Date(CONFIG.campaignStart + "T00:00:00");
+  const now = new Date();
+  let day = Math.floor((now - start) / 86400000) + 1;
+  const preview = parseInt(new URLSearchParams(location.search).get("day"), 10);
+  if (!isNaN(preview)) day = preview;
+  const beforeLaunch = day < 1;
+  const shownDay = Math.min(Math.max(day, 1), CONFIG.totalDays);
+
+  // ---- basic text ----
+  $("brand").innerHTML = CONFIG.shortName + "<span>.</span>";
+  $("heroPos").textContent = "Running for " + CONFIG.position;
+  $("heroName").innerHTML = CONFIG.name.replace(/(\S+)$/, "<em>$1</em>");
+  $("heroSlogan").textContent = CONFIG.slogan;
+  $("daychip").textContent = beforeLaunch ? "Launching soon" :
+    (day > CONFIG.totalDays ? "Campaign complete" : "Day " + shownDay + " of " + CONFIG.totalDays);
+  $("footNote").textContent = "A personal campaign site by " + CONFIG.name + ". Not an official page of any institution.";
+
+  // ---- countdown to voting ----
+  function tick(){
+    const diff = new Date(CONFIG.votingDate) - new Date();
+    const box = $("countdown");
+    if (diff <= 0){ box.innerHTML = '<div class="cd-label">Voting is open. Go vote! 🗳️</div>'; return; }
+    const d = Math.floor(diff/86400000), h = Math.floor(diff/3600000)%24, m = Math.floor(diff/60000)%60, s = Math.floor(diff/1000)%60;
+    box.innerHTML = '<div class="cd-label">Voting opens in</div>' +
+      [[d,"days"],[h,"hours"],[m,"mins"],[s,"secs"]].map(x=>'<div class="cd"><b>'+x[0]+'</b><small>'+x[1]+'</small></div>').join("");
+  }
+  tick(); setInterval(tick, 1000);
+
+  // ---- today's post + trail ----
+  const posts = POSTS.slice().sort((a,b)=>a.day-b.day);
+  const available = posts.filter(p => p.day <= shownDay);
+  const current = available[available.length-1] || posts[0];
+  const vid = id => id ? '<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/'+id+'" title="Campaign video" allowfullscreen></iframe></div>' : "";
+
+  $("todayLabel").textContent = day > CONFIG.totalDays ? "Final word" : "Today on the campaign · Day " + (current ? current.day : 1);
+  let bar = "";
+  for (let i=1;i<=CONFIG.totalDays;i++) bar += '<i class="'+(i<shownDay?"done":i===shownDay?"now":"")+'" title="Day '+i+'"></i>';
+  $("progress").innerHTML = bar;
+  $("todayPost").innerHTML = current ?
+    (beforeLaunch ? '<div class="notice">Campaign launches on '+start.toDateString()+'. Here\'s a sneak peek.</div>' : "") +
+    '<h2>'+current.title+'</h2>'+vid(current.video)+'<div class="body">'+current.body+'</div>'
+    : '<h2>Coming soon</h2>';
+
+  const past = available.filter(p => p !== current).reverse();
+  $("trailGrid").innerHTML = past.length ? past.map(p =>
+    '<div class="card trailcard"><div class="day">Day '+p.day+'</div><h3>'+p.title+'</h3>'+
+    '<div class="more">'+vid(p.video)+p.body+'</div><div class="toggle">Read ↓</div></div>').join("")
+    : '<p class="empty">The trail starts here. Yesterday\'s post will appear tomorrow.</p>';
+  document.querySelectorAll(".trailcard").forEach(c => c.addEventListener("click", e => {
+    if (e.target.closest("iframe")) return;
+    c.classList.toggle("open");
+    c.querySelector(".toggle").textContent = c.classList.contains("open") ? "Close ↑" : "Read ↓";
+  }));
+
+  // ---- promises ----
+  const label = {"not-started":"Not started","in-progress":"In progress","done":"Done ✓"};
+  const myVote = store.get("pollVote");
+  $("promiseGrid").innerHTML = PROMISES.map((p,i) =>
+    '<div class="card"><div class="num">0'+(i+1)+'</div><h3>'+p.title+'</h3><p>'+p.how+'</p>'+
+    '<span class="status '+p.status+'">'+label[p.status]+'</span>'+
+    (myVote===p.title ? '<div class="pollbar">★ Your top priority</div>' : "")+'</div>').join("");
+
+  // ---- heard list ----
+  $("heardList").innerHTML = HEARD.length ? HEARD.map(h=>'<li><b>'+h.theme+'</b><span>'+h.response+'</span></li>').join("")
+    : '<li style="border:0;padding:0"><span class="empty">Nothing posted yet. Be the first to speak up. Themes appear here as messages come in.</span></li>';
+
+  // ---- send to Google Form (if configured) ----
+  function send(action, fields){
+    if (!action) return;
+    const fd = new FormData();
+    Object.keys(fields).forEach(k => { if (k) fd.append(k, fields[k]); });
+    fetch(action, {method:"POST", mode:"no-cors", body:fd}).catch(()=>{});
+  }
+
+  // ---- voice form ----
+  $("voiceForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const msg = $("msg").value.trim(); if (!msg) return;
+    const name = $("nm").value.trim();
+    const f = {}; f[CONFIG.voiceForm.messageEntry] = msg;
+    f[CONFIG.voiceForm.nameEntry] = name ? name + ($("pub").checked ? " (ok to name)" : " (don't name)") : "Anonymous";
+    send(CONFIG.voiceForm.action, f);
+    $("voiceForm").reset();
+    $("formmsg").textContent = "Thank you. I've got it, and I'll respond to the common themes right here.";
+  });
+
+  // ---- welcome popup + poll ----
+  const overlay = $("overlay");
+  const show = n => ["step1","step2","step3"].forEach((s,i)=>$(s).classList.toggle("show", i===n-1));
+  const close = () => { overlay.classList.remove("show"); store.set("welcomed","1"); };
+  let pick = null;
+  $("opts").innerHTML = PROMISES.map((p,i)=>'<button class="opt" data-i="'+i+'">'+p.title+'</button>').join("");
+  document.querySelectorAll(".opt").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(".opt").forEach(x=>x.classList.remove("picked"));
+    b.classList.add("picked"); pick = PROMISES[b.dataset.i].title;
+    $("submitPoll").disabled = false; $("submitPoll").style.opacity = 1;
+  }));
+  $("startPoll").onclick = () => myVote ? (show(3), $("thanksText").textContent = "You already voted for \"" + myVote + "\". Thank you. It's shaping my priorities.") : show(2);
+  $("submitPoll").onclick = () => {
+    if (!pick) return;
+    const f = {}; f[CONFIG.pollForm.entry] = pick; send(CONFIG.pollForm.action, f);
+    store.set("pollVote", pick);
+    $("thanksText").textContent = "You picked \"" + pick + "\". I'll share the results during the campaign, and they'll shape where I start.";
+    show(3);
+  };
+  $("skip1").onclick = $("skip2").onclick = close;
+  $("closeModal").onclick = () => { close(); if (pick) location.reload(); };
+  overlay.addEventListener("click", e => { if (e.target === overlay) close(); });
+  if (!store.get("welcomed") || !isNaN(preview)) setTimeout(()=>overlay.classList.add("show"), 600);
+
+  // ---- WhatsApp share ----
+  const url = CONFIG.siteUrl || location.href.split("?")[0];
+  $("waShare").href = "https://wa.me/?text=" + encodeURIComponent("Hey Leader! Check out " + CONFIG.shortName + "'s campaign. Every promise is tracked publicly: " + url);
+})();
+</script>
+</body>
+</html>
